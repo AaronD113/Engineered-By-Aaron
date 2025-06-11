@@ -34,7 +34,7 @@
     </style>
     <header style="background-color: #00bcd4; padding: 10px 0;">
     <nav style="display: flex; justify-content: space-around; max-width: 900px; margin: 0 auto;">
-        <a href="landingPage.html" style="color: white; text-decoration: none; font-size: 1.2em; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease;">Home</a>
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 1.2em; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease;">Home</a>
         <a href="about.html" style="color: white; text-decoration: none; font-size: 1.2em; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease;">About</a>
         <a href="FalconResto-ModProject_desc.html" style="color: white; text-decoration: none; font-size: 1.2em; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease;">Projects</a>
         <a href="http://linkedin.com/in/aaron-dyer" style="color: white; text-decoration: none; font-size: 1.2em; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease;">LinkedIn</a>
@@ -49,11 +49,32 @@
     </section>
         <p class="heading-description" style="font-size: 3em; color: #064b54; margin-bottom: 20px;">1961 Falcon Resto-Mod! - Lola</p>
 
-        <div id="image-slideshow" style="margin-bottom: 40px;">
-            <img src="content/gauges.png" alt="NA Mazda Miata Gauge Cluster, dissasembled" style="max-width: 100%; height: auto; display: block; transition: opacity 0.5s ease-in-out;">
-            <img src="content/Lola_engine.png" alt="Custom-built LS engine for Lola!" style="max-width: 100%; height: auto; display: none; transition: opacity 0.5s ease-in-out;">
-            <img src="content/adafruit_motor_controller.png" alt="Sample of soldering done to microcontroller" style="max-width: 100%; height: auto; display: none; transition: opacity 0.5s ease-in-out;">
-        </div>
+<div id="image-slideshow" style="margin-bottom: 30px; position: relative;">
+    <div class="slide" style="display: block;">
+        <img src="content/gauges.png" alt="NA Mazda Miata Gauge Cluster, disassembled" style="max-width: 100%; height: auto; display: block; transition: opacity 0.5s ease-in-out;">
+        <p class="subtitle" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 10px;">NA Mazda Miata Gauge Cluster, disassembled</p>
+    </div>
+    <div class="slide" style="display: none;">
+        <img src="content/Lola_engine.png" alt="Custom-built LS engine for Lola!" style="max-width: 100%; height: auto; display: block; transition: opacity 0.5s ease-in-out;">
+        <p class="subtitle" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 10px;">Custom-built LS V8 engine for Lola!</p>
+    </div>
+    <div class="slide" style="display: none;">
+        <img src="content/adafruit_motor_controller.png" alt="Sample of soldering done to microcontroller" style="max-width: 100%; height: auto; display: block; transition: opacity 0.5s ease-in-out;">
+        <p class="subtitle" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 10px;">Sample of soldering done to microcontroller</p>
+    </div>
+
+  <script>
+    const slides = document.querySelectorAll('#image-slideshow .slide');
+    let currentSlide = 0;
+
+    function showNextSlide() {
+      slides[currentSlide].style.display = 'none';
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].style.display = 'block';
+    }
+
+    setInterval(showNextSlide, 10000); // Cycle every 5 seconds
+  </script>
 
         <h2 class="subheading" style="font-size: 1.5em; color: #00bcd4; margin-top: 20px;">Overview</h2>
         <p class="subheading" style="font-size: 1.2em; color: #333; margin-top: 10px;">This custom data acquisition system will integrate into a 1961 Ford Falcon, designed to extract and display real-time vehicle data via a Holley Terminator X Max ECU, including RPM, speed, odometer, oil temperature, coolant temperature, battery voltage, and air/fuel ratio.</p>

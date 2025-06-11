@@ -7,8 +7,8 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open landingPage.html",
-            "file": "\\\\daisyserver2-0\\sambashare\\DaisyVault\\Backups\\Ongoing Shared Files\\Code\\Website project\\landingPage.html"
+            "name": "Open index.html",
+            "file": "\\\\daisyserver2-0\\sambashare\\DaisyVault\\Backups\\Ongoing Shared Files\\Code\\Website project\\index.html"
         }
     ]
 }
