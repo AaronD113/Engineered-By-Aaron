@@ -1,20 +1,25 @@
-/*function setGradientAngle() {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  const contentHeight = document.querySelector('.hero-section').offsetHeight;
+// script.js
 
-  // Prioritize window height if it's larger than the content height
-  const longestDimension = windowHeight > contentHeight ? windowHeight : contentHeight;
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a');
 
-  // Calculate the angle based on the longest dimension
-  const angle = (longestDimension / 1200) * 90; // Adjust the divisor (1200) to control the gradient’s transition.
+  links.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default link behavior
 
-  const gradient = document.querySelector('.hero-section');
-  gradient.style.background = `linear-gradient(to bottom, #000000, #FFA07A)`;
-}
+      const target = this.getAttribute('href');
+      if (!target) return; // Exit if no target is defined
 
-// Initial call to set the gradient on page load
-setGradientAngle();
+      const offset = 0; // Adjust if needed to account for the section's position
+      const element = document.getElementById(target);
 
-// Update the gradient on window resize
-window.addEventListener('resize', setGradientAngle);*/
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start', //Align to top of the target element
+          inline: 'start' //Align to top of the target element
+        });
+      }
+    });
+  });
+});
