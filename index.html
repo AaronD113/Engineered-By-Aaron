@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You've Done It!</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s linear;
+        }
+        .comic-text {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <button id="printInfoButton" style="position: absolute; top: 10px; left: 10px;">Print Info</button>
+    <div class="comic-text">YOU'VE DONE IT!</div>
+    <script>
+        let hue = 0;
+        function animateBackground() {
+            document.body.style.background = `hsl(${hue}, 100%, 50%)`;
+            hue = (hue + 1) % 360;
+            requestAnimationFrame(animateBackground);
+        }
+        animateBackground();
+
+        document.getElementById('printInfoButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/sambashare/DaisyVault/Backups/Ongoing Shared Files/Code/Website project/content/info.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch info.json');
+                }
+                const data = await response.json();
+                const outputDiv = document.createElement('div');
+                outputDiv.style.fontFamily = "'Comic Sans MS', 'Comic Sans', cursive";
+                outputDiv.style.fontSize = '20px';
+                outputDiv.style.marginTop = '20px';
+                for (const [key, value] of Object.entries(data)) {
+                    const line = document.createElement('div');
+                    line.textContent = `${key}: ${value}`;
+                    outputDiv.appendChild(line);
+                }
+                document.body.appendChild(outputDiv);
+                location.reload();
+            } catch (error) {
+                console.error('Error fetching info.json:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+your-website-directory/
+    landingPage.html      (Landing Page)
+    about.html            (About Page)
+    contact.html          (Contact Page)
+    css/                  (CSS Files)
+        style.css         (Global Styles - can be shared)
+        about.css         (Styles specific to the 'about' page)
+    js/                   (JavaScript Files)
+        script.js         (Global Scripts - can be shared)
+        about.js          (Scripts specific to the 'about' page)
