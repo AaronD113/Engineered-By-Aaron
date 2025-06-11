@@ -1,10 +1,2 @@
-your-website-directory/
-    landingPage.html      (Landing Page)
-    about.html            (About Page)
-    contact.html          (Contact Page)
-    css/                  (CSS Files)
-        style.css         (Global Styles - can be shared)
-        about.css         (Styles specific to the 'about' page)
-    js/                   (JavaScript Files)
-        script.js         (Global Scripts - can be shared)
-        about.js          (Scripts specific to the 'about' page)
+Hello! This repo tracks development of my personal website project, Engineered-By-Aaron.com. As I learn to operate on a workflow lacking the enterprise tools I have experience with, I will be iterating accordingly to improve design and user experience. Thanks for stopping by!
+-Aaron
